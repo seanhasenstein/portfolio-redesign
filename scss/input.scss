@@ -79,7 +79,7 @@ body {
 	width: 100%;
 	margin: 0 auto;
 
-	i.fa.fa-circle {
+	i.fa.fa-circle, i.fa.fa-circle-o {
 	    font-size: 8px;
 	    color: #5c5d5f;
 	    margin: 3px;
@@ -298,7 +298,7 @@ section.teaser {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom center;
-	height: 630px;
+	/*height: 630px;*/ height: 500px;
 
 	background-color: $dark;
 	text-align: left;
@@ -361,29 +361,204 @@ section.teaser {
 
 
 
+section.about, section.skills {
 
+	h2 {
+		font-size: 32px;
+    	margin: 0 0 25px;
+    	color: $dark;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: 13px;
+		letter-spacing: 0.5px;
+		color: $yellow;
+		margin: 0px 0 15px 0;
+	}
+}
+
+
+
+section.about {
+	max-width: 800px;
+	margin: 80px auto 50px;
+	text-align: center;
+
+	.inner {
+		/*width: 80%;*/
+	}
+
+	h2, p {
+		color: $dark;
+	}
+
+	p {
+	    /* font-family: "source-sans-pro",sans-serif; */
+	    font-weight: 300;
+	    line-height: 27px;
+	    margin: 0 0 30px 0;
+	    font-family: "azo-sans-web",sans-serif;
+	    color: #888;
+	    font-size: 18px;
+	    /* font-style: italic; */
+	    font-family: "effra",sans-serif;
+	}
+
+	a {
+		text-decoration: none;
+		color: #323638;
+		margin: 0 45px 0 0;
+		font-weight: 300;
+		text-transform: uppercase;
+		font-size: 14px;
+
+		i.fa.fa-angle-right {
+		    margin-left: 7px;
+		    vertical-align: -1px;
+		    color: $yellow;
+		    font-size: 18px;
+		}
+	}
+}
+
+section.skills {
+	background: url('images/photoshop.jpg');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 49%;
+	background-color: #fff;
+	width: 100%;
+	margin: 0 auto;
+    padding: 45px 0 40px;
+
+	.inner {
+		max-width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+
+		div.col-1, div.col-2 {
+			/*width: 33.333%;*/
+			float: left;
+			display: inline-block;
+			
+		}
+
+		.col-1, .col-2 {
+			padding: 0;
+
+			ul {
+				margin: 0;
+			}
+		}
+
+		.col-1 {
+			margin: 0 6% 0 0;
+		}
+		.col-2 {
+			margin: 0;
+		}
+
+		h3 {
+			text-align: left;
+			margin-bottom: 20px;
+
+			&.programs {
+				margin-top: 45px;
+			}
+		}
+
+		h2 {
+			color: #fff;
+			margin-bottom: 50px;
+		}
+
+		ul {
+			margin: 12px 0 30px;
+			padding: 0;
+			color: $dark;
+			list-style-type: none;
+			text-align: left;
+			font-size: 16px;
+			font-family: "effra",sans-serif;
+			font-weight: 300;
+
+			li {
+				margin: 15px 0 0;
+
+				i.fa.fa-check, i.fa.fa-circle-o, i.fa.fa-circle {
+				    margin-right: 12px;
+				    vertical-align: middle;
+				}
+			}
+		}
+
+		.buttons {
+		    clear: both;
+		    text-align: left;
+		    padding: 50px 0 0;
+		    margin-left: -5px;
+		    
+		    a {
+				text-decoration: none;
+				color: $dark;
+				margin: 0 20px 0 0;
+				font-weight: 300;
+				/*text-transform: uppercase;*/
+				font-size: 14px;
+				padding: 8px 13px;
+    			border-radius: 3px;
+
+				i.fa.fa-angle-right {
+				    margin-left: 7px;
+				    vertical-align: -1px;
+				    /*color: $yellow;*/
+				    font-size: 18px;
+				}
+
+				&.blue {
+					border: 1px solid $blue;
+					color: $blue;
+
+					&:hover {
+						color: #fff;
+						background: $blue;
+					}
+				}
+				&.green {
+					border: 1px solid $green;
+					color: $green;
+
+					&:hover {
+						color: #fff;
+						background: $green;
+					}
+				}
+			}
+		}
+	}
+}
 
 
 
 
 section.work {
-	background: #F4F4F4;
+	background: #f3f3f3;
 	max-width: 100%;
-	margin: 0 auto;
-	padding: 0 0 70px;
+	margin: 70px auto 0;
+	padding: 70px 0 60px;
 	text-align: center;
+	box-shadow: 0 -2px 2px rgba(0,0,0,0.1);
 
 	@media screen and (max-width: 800px) {
 		padding: 50px 0;
 	}
 
 	h2 {
-	    text-align: center;
-	    text-transform: uppercase;
-	    font-weight: 500;
-	    margin: 75px 0 40px;
-	    font-size: 30px;
-	    color: $dark;
+	    font-size: 32px;
+    	margin: 0 0 45px;
+    	color: $dark;
 	}
 
 	.inner {
@@ -590,8 +765,8 @@ section.get-in-touch {
 		float: right;
 		text-align: left;
 		display: inline-block;
-		margin: 85px 0 20px;
-		padding: 20px 0 25px;
+	    margin: 90px 0 20px;
+	    padding: 10px 0 25px;
 		border-left: 1px solid #5c5d5f;
 
 		p {
@@ -599,12 +774,13 @@ section.get-in-touch {
 		    text-align: left;
 		    font-weight: 300;
 		    line-height: 26px;
-		    font-size: 16px;
+		    font-size: 17px;
 		    color: #bfbfbf;
-		    width: 90%;
+		    width: 73%;
 		    display: inline-block;
 		    margin: 0 0 30px 0;
 		    padding: 0 0 0 70px;
+		    /*font-family: "effra",sans-serif;*/
 
 		    a {
 		    	color: $yellow;
