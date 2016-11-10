@@ -30,7 +30,7 @@ body {
 
 .btn-1, .btn-2, .btn-3 {
 	border-radius: 5px;
-	margin: 0px 5px 40px;
+	margin: 0 5px 120px;
 	padding: 10px 18px;
 	color: #fff;
 	text-decoration: none;
@@ -74,26 +74,6 @@ body {
 	margin: 0 auto;
 }
 
-.elipsis {
-	text-align: center;
-	width: 100%;
-	margin: 0 auto;
-
-	i.fa.fa-circle, i.fa.fa-circle-o {
-	    font-size: 8px;
-	    color: #5c5d5f;
-	    margin: 3px;
-	    text-align: center;
-
-	    &:hover {
-	    	color: #ffaf00;
-	    }
-	}
-}
-.elipsis.dark {
-	background: $dark;
-}
-
 nav {
 	width: 100%;
 	position: relative;
@@ -104,7 +84,7 @@ nav {
 
 // nav styles
 .mobile-nav-wrap {
-  @media (min-width: 850px) {
+  @media (min-width: 800px) {
     display: inline-block;
   }
 }
@@ -119,7 +99,7 @@ nav {
   line-height: 98px;
   width: 75%;
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 800px) {
   	/*background-color: #222222;*/
   	display: none;
   	display: absolute;
@@ -130,25 +110,22 @@ nav {
   }
   
   li {
-    /*border-bottom: 1px solid rgba(255,255,255,0.1);*/
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 800px) {
     	display: block;
     }
     a {
       color: white;
       display: block;
-      /*padding: 15px 0;*/
       text-align: right;
       text-decoration: none;
       transition: all 0.3s ease-in-out;
 
-      @media screen and (max-width: 850px) {
+      @media screen and (max-width: 800px) {
       	text-align: center;
       }
       
       &:hover {
       	color: #72AA2D; color: #e40303; color: #999; color: #ffaf00;
-        /*background-color: lighten(#222222, 5%);*/
       }
     }
   }
@@ -158,14 +135,19 @@ nav {
 // styling of hamburger menu
 .hamburger-menu {
   display: none;
-  height: 100px;
+  height: 75px;
   padding: 35px 25px;
   margin: 15px 0 0 0;
   transition: all 0.3s ease-in-out;
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 800px) {
   	display: block;
   	float: right;
+  	margin: 0;
+  	padding: 12px 25px 0 0;
+  }
+  @media screen and (max-width: 370px) {
+  	padding: 10px 25px 0 0;
   }
 
   &:hover {
@@ -173,12 +155,16 @@ nav {
   }
 
   .menu-item {
-    background: #000;
+    background: #fff;
     display: block;
     height: 2px;
     margin: 0 0 9px;
     transition: all 0.3s ease-in-out;
-    width: 35px;
+    width: 37px;
+
+    @media screen and (max-width: 370px) {
+    	margin: 0 0 7px;
+    }
   }
     
   &.open {
@@ -205,14 +191,22 @@ nav {
 		list-style-type: none;
 
 		&.left, &.right {
-			float: left;
 			padding: 0;
 		}
 
 		&.left {
-			width: 25%;
+			float: left;
+			width: 230px;
 			text-align: left;
 			font-size: 28px;
+
+			@media screen and (max-width: 800px) {
+				margin: 0;
+			}
+			@media screen and (max-width: 370px) {
+				width: 218px;
+				font-size: 22px;
+			}
 
 			img {
 				width: 100%;
@@ -231,23 +225,33 @@ nav {
 						color: #ffaf00;
 						line-height: 13px;
 						text-transform: none;
+
+						@media screen and (max-width: 370px) {
+							font-size: 12.4px;
+						}
 					}
 				}
 			}
 		}
 
 		&.right {
-			/*width: 75%;*/
+			float: right;
 			text-align: right;
 			font-size: 16px;
 			font-weight: 300;
+			width: 442px;
+
+			@media screen and (max-width: 800px) {
+				clear: both;
+				width: 100%;
+			}
 
 			li {
 
 				a {
-					margin: 0 20px;
+					margin: 5px 20px 0;
 
-					@media screen and (max-width: 850px) {
+					@media screen and (max-width: 800px) {
 						margin: 0;
 						padding: 0 20px;
 						border-bottom: 1px solid #000;
@@ -298,17 +302,23 @@ section.teaser {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom center;
-	/*height: 630px;*/ height: 500px;
-
 	background-color: $dark;
 	text-align: left;
-	padding: 0 90px;
+	padding: 0 90px 100px;
+	max-width: 100%;
+
+	@media screen and (max-width: 1000px) {
+		padding: 0 10px 100px 30px;
+	}
 
 	@media screen and (max-width: 850px) {
 		padding: 20px 30px;
 	}
 	@media screen and (max-width: 600px) {
 		padding: 20px;
+	}
+	@media screen and (max-width: 480px) {
+		padding: 20px 20px 60px 20px;
 	}
 
 	h1, h2, h3 {
@@ -325,21 +335,32 @@ section.teaser {
 	h2 {
 	    font-weight: 300;
 	    font-size: 28px;
-	    /* text-transform: uppercase; */
-	    margin: 120px auto 60px;
+	    margin: 150px auto 60px;
 	    letter-spacing: 1px;
 	    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 	    width: 60%;
+	    max-width: 735px;
 	    line-height: 38px;
+
+	    @media screen and (max-width: 800px) {
+	    	margin: 100px auto 60px;
+	    	width: 80%;
+	    }
+	    @media screen and (max-width: 600px) {
+	    	width: 95%;
+	    }
+	    @media screen and (max-width: 400px) {
+	    	margin: 20px auto 50px;
+	    }
 	}
 
 	h3 {
-	    font-weight: 200;
-	    font-size: 19px;
-	    margin: 24px auto 35px;
-	    width: 60%;
-	    margin: 20px auto 35px;
-	    line-height: 28px;
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: 13px;
+		letter-spacing: 0.5px;
+		color: $yellow;
+		margin: 0px 0 15px 0;
 
 		span {
 		    font-size: 80px;
@@ -350,11 +371,34 @@ section.teaser {
 		}
 	}
 
-	p {
-		color: #fff;
-		width: 75%;
-		margin: 40px auto 0;
-		line-height: 28px;
+	a.btn-1, a.btn-2 {
+
+		@media screen and (max-width: 450px) {
+			display: block;
+			max-width: 100%;
+			margin: 10px 0;
+		}
+	}
+
+	.elipsis {
+		text-align: center;
+		width: 100%;
+		margin: 0 auto;
+
+		@media screen and (max-width: 480px) {
+			margin: 50px 0 0;
+		}
+
+		i.fa.fa-circle, i.fa.fa-circle-o {
+		    font-size: 8px;
+		    color: #5c5d5f;
+		    margin: 3px;
+		    text-align: center;
+
+		    &:hover {
+		    	color: #ffaf00;
+		    }
+		}
 	}
 }
 
@@ -382,12 +426,29 @@ section.about, section.skills {
 
 
 section.about {
-	max-width: 800px;
-	margin: 80px auto 50px;
-	text-align: center;
+	width: 100%;
+	margin: 80px 0 40px;
+
+	@media screen and (max-width: 850px) {
+		max-width: 90%;
+	}
+	@media screen and (max-width: 800px) {
+		margin: 70px 0 20px;
+	}
 
 	.inner {
-		/*width: 80%;*/
+		max-width: 1000px;
+		margin: 0 auto;
+
+		@media screen and (max-width: 1075px) {
+			max-width: 900px;
+		}
+		@media screen and (max-width: 950px) {
+			max-width: 800px;
+		}
+		@media screen and (max-width: 850px) {
+			max-width: 90%;
+		}
 	}
 
 	h2, p {
@@ -395,18 +456,24 @@ section.about {
 	}
 
 	p {
-	    /* font-family: "source-sans-pro",sans-serif; */
 	    font-weight: 300;
-	    line-height: 27px;
+	    line-height: 28px;
 	    margin: 0 0 30px 0;
-	    font-family: "azo-sans-web",sans-serif;
-	    color: #888;
+	    color: $dark;
 	    font-size: 18px;
-	    /* font-style: italic; */
 	    font-family: "effra",sans-serif;
+
+	    a {
+			text-decoration: none;
+			color: $dark;
+
+			&:hover {
+				text-decoration: underline;
+			}
+	    }
 	}
 
-	a {
+	a.button {
 		text-decoration: none;
 		color: #323638;
 		margin: 0 45px 0 0;
@@ -427,21 +494,51 @@ section.skills {
 	background: url('images/photoshop.jpg');
 	background-repeat: no-repeat;
 	background-position: right center;
-	background-size: 49%;
 	background-color: #fff;
 	width: 100%;
-	margin: 0 auto;
-    padding: 45px 0 40px;
+	margin: 0;
+    padding: 40px 0;
+    background-size: 700px 500px;
+
+    @media screen and (max-width: 1300px) {
+    	background-position: 580px center;
+    }
+	@media screen and (max-width: 600px) {
+		background: #fff;
+	}
 
 	.inner {
 		max-width: 1000px;
 		margin: 0 auto;
 		text-align: center;
 
+		@media screen and (max-width: 1075px) {
+			max-width: 900px;
+		}
+		@media screen and (max-width: 950px) {
+			max-width: 800px;
+		}
+		@media screen and (max-width: 850px) {
+			max-width: 90%;
+		}
+
+		.left {
+
+			@media screen and (max-width: 600px) {
+    			margin: 0 auto;
+			}
+			@media screen and (max-width: 480px) {
+				width: 100%;
+			}
+		}
+
 		div.col-1, div.col-2 {
-			/*width: 33.333%;*/
 			float: left;
 			display: inline-block;
+
+			@media screen and (max-width: 850px) {
+				display: block;
+			}
 			
 		}
 
@@ -455,17 +552,32 @@ section.skills {
 
 		.col-1 {
 			margin: 0 6% 0 0;
+
+			@media screen and (max-width: 600px) {
+				margin: 0 60px 0 0;
+			}
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				margin: 0;
+			}
 		}
 		.col-2 {
 			margin: 0;
+
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				margin: 45px 0 0 0;
+			}
 		}
 
 		h3 {
 			text-align: left;
 			margin-bottom: 20px;
+			color: $dark;
+			font-weight: 600;
 
-			&.programs {
-				margin-top: 45px;
+			&.level-2 {
+				margin-top: 65px;
 			}
 		}
 
@@ -480,16 +592,17 @@ section.skills {
 			color: $dark;
 			list-style-type: none;
 			text-align: left;
-			font-size: 16px;
+			font-size: 17px;
 			font-family: "effra",sans-serif;
 			font-weight: 300;
 
 			li {
 				margin: 15px 0 0;
 
-				i.fa.fa-check, i.fa.fa-circle-o, i.fa.fa-circle {
+				i.fa.fa-check, i.fa.fa-circle-o, i.fa.fa-circle, i.fa.fa-dot-circle-o {
 				    margin-right: 12px;
-				    vertical-align: middle;
+				    vertical-align: -1px;
+				    color: $yellowHover;
 				}
 			}
 		}
@@ -505,7 +618,6 @@ section.skills {
 				color: $dark;
 				margin: 0 20px 0 0;
 				font-weight: 300;
-				/*text-transform: uppercase;*/
 				font-size: 14px;
 				padding: 8px 13px;
     			border-radius: 3px;
@@ -513,7 +625,6 @@ section.skills {
 				i.fa.fa-angle-right {
 				    margin-left: 7px;
 				    vertical-align: -1px;
-				    /*color: $yellow;*/
 				    font-size: 18px;
 				}
 
@@ -544,26 +655,60 @@ section.skills {
 
 
 section.work {
-	background: #f3f3f3;
+	background: #fff;
 	max-width: 100%;
-	margin: 70px auto 0;
-	padding: 70px 0 60px;
+	margin: 0 auto;
+	padding: 50px 0 60px;
 	text-align: center;
-	box-shadow: 0 -2px 2px rgba(0,0,0,0.1);
 
 	@media screen and (max-width: 800px) {
-		padding: 50px 0;
+		padding: 40px 0 50px;
 	}
 
+	h3 {
+		text-align: left;
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: 13px;
+		letter-spacing: 0.5px;
+		color: $yellow;
+		margin: 0px 0 15px 15px;
+	}
+
+
 	h2 {
+		text-align: left;
 	    font-size: 32px;
-    	margin: 0 0 45px;
+    	margin: 0 0 30px 15px;
     	color: $dark;
 	}
 
+	h2, h3 {
+
+		@media screen and (max-width: 900px) {
+			margin-left: 10px;
+		}
+		@media screen and (max-width: 650px) {
+			margin-left: 5px;
+		}
+	}
+
 	.inner {
-		width: 1000px;
+		width: 1030px;
 		margin: 0 auto;
+
+		@media screen and (max-width: 1075px) {
+			max-width: 930px;
+		}
+		@media screen and (max-width: 950px) {
+			max-width: 830px;
+		}
+		@media screen and (max-width: 900px) {
+			max-width: 820px;
+		}
+		@media screen and (max-width: 850px) {
+			max-width: 90%;
+		}
 		
 		div.shot-border {
 			height: auto;
@@ -572,6 +717,10 @@ section.work {
 			display: inline-block;
 			text-decoration: none;
 			position: relative;
+
+			@media screen and (max-width: 650px) {
+				width: 50%;
+			}
 
 			a.analytics4athletes {
 
@@ -617,17 +766,27 @@ section.work {
 			.shot {
 				box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 				margin: 15px;
-				background: #000;
+				background: #333;
 				display: inline-block;
 				text-decoration: none;
 				position: relative;
 				cursor: pointer;
 
+				@media screen and (max-width: 900px) {
+					margin: 10px;
+				}
+				@media screen and (max-width: 650px) {
+					margin: 5px;
+				}
+
 				&:hover {
 
 					img {
-						opacity: 0.2;
+						opacity: 0.05;
 
+						@media screen and (max-width: 750px) {
+							opacity: 0.9;
+						}
 						@media screen and (max-width: 700px) {
 							opacity: 1.0;
 						}
@@ -636,7 +795,7 @@ section.work {
 					.details {
 						position: absolute;
 						display: block;
-						top: 70px;
+						top: 65px;
 						left: 5%;
 						bottom: 0;
 						text-align: center;
@@ -645,7 +804,7 @@ section.work {
 						@media screen and (max-width: 1000px) {
 							top: 0;
 						}
-						@media screen and (max-width: 700px) {
+						@media screen and (max-width: 750px) {
 							display: none;
 						}
 
@@ -683,14 +842,25 @@ section.work {
 							letter-spacing: 3px;
 							line-height: 14px;
 							text-shadow: 1px 1px 2px rgba(0,0,0,1);
-							margin-bottom: 12px;
+							margin-bottom: 10px;
 						}
 						p {
-							font-size: 15px;
-							color: #fff;
-							display: inline-block;
-							position: relative;
-							margin: 0;
+						    font-size: 9px;
+						    color: #9a9a9a;
+						    display: inline-block;
+						    position: relative;
+						    margin: 0;
+						    text-transform: uppercase;
+						    font-weight: 100;
+						    font-family: "effra",sans-serif;
+						    line-height: 15px;
+						    letter-spacing: 1px;
+
+						    i.fa.fa-angle-right {
+							    margin-left: 5px;
+							    font-size: 10px;
+							    vertical-align: 0px;
+							}
 						}
 					}
 				}
@@ -717,87 +887,59 @@ section.work {
 
 
 section.get-in-touch {
-	background: $dark;
-	padding: 50px 0;
-	background: $dark;
 	width: 100%;
 	margin: 0 auto;
+	padding: 90px 0 70px;
+	background: $dark;
+	text-align: center;
 
-	.inner {
-		width: 70%;
+	h2 {
+		font-size: 36px;
+		color: #fff;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin: 0;
+
+		@media screen and (max-width: 500px) {
+			font-size: 28px;
+		}
+		@media screen and (max-width: 400px) {
+			font-size: 24px;
+		}
+	}
+
+	p {
+		width: 550px;
+		margin: 35px auto 41px;
+		font-size: 17px;
+		font-weight: 300;
+		line-height: 28px;
+		color: #aaa;
+
+		@media screen and (max-width: 650px) {
+			width: 95%;
+		}
+		@media screen and (max-width: 400px) {
+			font-size: 16px;
+			line-height: 26px; 
+			width: 90%;
+		}
+
+	    a {
+	    	color: $yellow;
+	    	text-decoration: none;
+
+	    	&:hover {
+	    		color: $yellow;
+	    		text-decoration: underline;
+	    	}
+	    }
+	}
+
+	.btn-3 {
 		margin: 0 auto;
-	}
-
-	.left {
-		width: 38%;
-		float: left;
-		text-align: right;
-
-		h2 {
-			/*text-align: right; */
-			float: left;
-			display: inline-block;
-			font-size: 36px;
-			text-transform: uppercase;
-			color: #fff;
-			width: 85%;
-			letter-spacing: 1px;
-			/* padding: 0 70px 0 0; */
-			/* margin: 30px 0; */
-		}
-
-		i.fa.fa-circle {
-			color: #ffaf00;
-			border: 1px solid #ffaf00;
-			border-radius: 100%;
-			font-size: 13px;
-			vertical-align: top;
-			padding: 9px;
-			float: right;
-			/* margin-left: 45px; */
-			margin-right: -34px;
-			margin-top: 34px;
-		}
-	}
-
-	.right {
-		width: 60%;
-		float: right;
-		text-align: left;
 		display: inline-block;
-	    margin: 90px 0 20px;
-	    padding: 10px 0 25px;
-		border-left: 1px solid #5c5d5f;
-
-		p {
-		    float: left;
-		    text-align: left;
-		    font-weight: 300;
-		    line-height: 26px;
-		    font-size: 17px;
-		    color: #bfbfbf;
-		    width: 73%;
-		    display: inline-block;
-		    margin: 0 0 30px 0;
-		    padding: 0 0 0 70px;
-		    /*font-family: "effra",sans-serif;*/
-
-		    a {
-		    	color: $yellow;
-		    	text-decoration: none;
-
-		    	&:hover {
-		    		color: $yellow;
-		    		text-decoration: underline;
-		    	}
-		    }
-		}
-
-		.btn-3 {
-			margin: 0 0 0 70px;
-		}
 	}
-
 }
 
 
@@ -805,43 +947,24 @@ section.get-in-touch {
 footer {
 	width: 100%;
 	margin: 0 auto;
-	padding: 50px 0 56px;
+	padding: 0 0 60px;
 	background: $dark;
-
-	.inner {
-		padding: 0 100px;
-	}
-
-	p {
-	    text-align: left;
-	    color: #555;
-	    display: inline-block;
-	    /* float: left; */
-	    font-weight: 300;
-	    font-size: 12px;
-	    margin: 0;
-	    text-transform: uppercase;
-	    letter-spacing: 0.3px;
-	}
+	text-align: center;
 
 	div.social {
 		display: inline-block;
-		float: right;
 
 		a {
-			margin-right: 10px;
 			border-radius: 100%;
-			/* border: solid 2px #454647; */
-			color: #787c7e;
-			color: #666;
-			width: 26px;
-			height: 26px;
+			color: #727B7F;
+			width: 28px;
+			height: 28px;
 			display: inline-block;
 			text-align: center;
-			font-size: 21px;
+			font-size: 24px;
 			line-height: 26px;
 			transition: all 300ms ease-out;
-			/* background: #454647; */
+			margin: 0 8px;
 		}
 
 		:hover {
@@ -852,36 +975,6 @@ footer {
 		:focus, &:active {
 			text-decoration: none;
 		}
-		/*.email:hover {
-			background: #00a651;
-			border-color: #00a651;
-		}
-		.fb:hover {
-			background: #3b5998;
-			border-color: #3b5998;
-		}
-		.tw:hover {
-			background: #00aced;
-			border-color: #00aced;
-		}
-		.ln:hover {
-			background: #0077b5;
-			border-color: #0077b5;
-		}
-		.ig:hover {
-			background: #9b5d2f;
-			border-color: #9b5d2f;
-		}
-		.gh:hover {
-			background: #000;
-			border-color: #000;
-		}*/
-
-		/*i {
-		    color: #fff;
-		    margin: 0 7px;
-		    font-size: 24px;
-		}*/
 	}
 }
 
