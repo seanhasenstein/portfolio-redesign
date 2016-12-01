@@ -19,15 +19,13 @@
     top: 0;
     right: 50px;
     bottom: 0;
-    
     z-index: 20;
     opacity: 1;
     background: transparent;
     margin-bottom: 0;
     text-align: left;
     overflow-y: auto;
-    /*-webkit-transition: -webkit-transform 0.5s ease, opacity 0.3s ease 0.7s;*/
-    /*transition: transform 0.5s ease, opacity 0.3s ease 0.7s;*/
+    overflow-x: hidden;
 
     @media screen and (max-width: 900px) {
     	position: fixed;
@@ -165,6 +163,7 @@ h3.nav-title {
 			color: rgb(184, 184, 184);
 			cursor: pointer;
 			text-transform: uppercase;
+			letter-spacing: 0.4px;
 
 			@media screen and (max-width: 900px) {
 				font-family: "merriweather",serif;

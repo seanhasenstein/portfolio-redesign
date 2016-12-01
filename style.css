@@ -13,7 +13,7 @@ body {
   padding: 10px 18px;
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-weight: 500;
   text-align: center;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
@@ -64,8 +64,7 @@ body {
   margin-bottom: 0;
   text-align: left;
   overflow-y: auto;
-  /*-webkit-transition: -webkit-transform 0.5s ease, opacity 0.3s ease 0.7s;*/
-  /*transition: transform 0.5s ease, opacity 0.3s ease 0.7s;*/ }
+  overflow-x: hidden; }
   @media screen and (max-width: 900px) {
     .nav {
       position: fixed;
@@ -184,7 +183,8 @@ h3.nav-title {
       text-overflow: ellipsis;
       color: #b8b8b8;
       cursor: pointer;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      letter-spacing: 0.4px; }
       @media screen and (max-width: 900px) {
         .nav ul li a {
           font-family: "merriweather",serif;
@@ -318,34 +318,36 @@ body.nav-opened .site-wrapper {
 .clearfix:after {
   clear: both; }
 
-/*nav {
-	position: absolute;
-	top: 40px;
-	right: 40px;
+section.case-study {
+  max-width: 1000px;
+  margin: 0 auto; }
+  section.case-study h1 {
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #323638; }
+  section.case-study p {
+    font-weight: 300;
+    line-height: 30px;
+    margin: 0 auto 30px;
+    color: #323638;
+    font-size: 15px;
+    font-family: "merriweather",serif;
+    max-width: 800px; }
 
-	ul {
-		list-style-type: none;
-		padding: 0;
+.analytics4athletes header {
+  position: relative;
+  width: 100%;
+  background: #323638 no-repeat center center;
+  background-size: cover;
+  margin: 0 0 50px 0;
+  background: url("images/analytics4athletes/header.jpg");
+  background-size: cover;
+  height: 300px;
+  background-position: top right; }
+.analytics4athletes h1 {
+  /*color: #2f6da8;*/ }
 
-		li {
-			display: inline-block;
-			margin: 0 25px;
-
-			a {
-				color: rgba(255, 255, 255, 0.8);
-				font-size: 16px;
-				text-transform: uppercase;
-				text-decoration: none;
-				font-weight: 300;
-				letter-spacing: 0.5px;
-
-				&:hover {
-					color: #fff;
-				}
-			}
-		}
-	}
-}*/
 section.teaser {
   background: url("images/teaser2.jpg");
   background-repeat: no-repeat;
@@ -370,20 +372,45 @@ section.teaser {
       min-height: 240px;
       height: 60vh;
       padding: 15% 0; } }
+  section.teaser img.logo {
+    position: absolute;
+    width: 30px;
+    top: 60px;
+    left: 80px; }
+  section.teaser .brand {
+    position: absolute;
+    top: 45px;
+    left: 60px;
+    text-align: left; }
+    section.teaser .brand h1 {
+      text-align: left;
+      font-size: 32px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin: 0; }
+    section.teaser .brand h2 {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 17px;
+      letter-spacing: 0.5px;
+      font-family: "merriweather",serif;
+      color: rgba(255, 175, 0, 0.7);
+      margin: 0; }
   section.teaser .main-content {
     display: table-cell;
     vertical-align: middle; }
+    section.teaser .main-content h1 {
+      font-weight: 700;
+      /*margin: 180px auto 20px;*/
+      width: 40%;
+      font-size: 28px;
+      font-weight: 500;
+      margin: 0 auto;
+      font-family: "merriweather",serif;
+      /*text-transform: uppercase;*/ }
   section.teaser h1, section.teaser h2, section.teaser h3 {
     text-align: center;
     color: #fff; }
-  section.teaser h1 {
-    font-size: 40px;
-    font-weight: 700;
-    margin: 180px 0 20px;
-    font-size: 40px;
-    font-weight: 500;
-    margin: 0;
-    text-transform: uppercase; }
   section.teaser h2 {
     font-weight: 300;
     font-size: 20px;
@@ -393,10 +420,6 @@ section.teaser {
     font-family: "merriweather",serif;
     color: rgba(255, 175, 0, 0.7);
     margin: 0; }
-    @media screen and (max-width: 600px) {
-      section.teaser h2 {
-        width: 95%;
-        margin: 0 auto; } }
   section.teaser h3 {
     text-transform: uppercase;
     font-weight: 400;
@@ -457,18 +480,6 @@ section.teaser {
     transform: translateY(-5px); }
   60% {
     transform: translateY(7px); } }
-section.about h2, section.skills h2 {
-  font-size: 32px;
-  margin: 0 0 25px;
-  color: #323638; }
-section.about h3, section.skills h3 {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  color: #ffaf00;
-  margin: 15px 0 20px 0; }
-
 section.about {
   width: 100%;
   margin: 30px 0 25px;
@@ -510,9 +521,19 @@ section.about {
   section.about h2, section.about p {
     color: #323638; }
   section.about h2 {
-    position: relative; }
+    position: relative;
+    font-size: 32px;
+    margin: 0 0 25px;
+    color: #323638; }
     section.about h2 .separator-mob {
       display: inline; }
+  section.about h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #ffaf00;
+    margin: 15px 0 20px 0; }
   section.about p {
     font-weight: 300;
     line-height: 30px;
@@ -542,7 +563,7 @@ section.about {
 
 section.work {
   clear: both;
-  background: #f2f2f2;
+  background: #f5f5f5;
   max-width: 100%;
   margin: 0 auto;
   padding: 50px 0 60px;
@@ -563,7 +584,8 @@ section.work {
     text-align: left;
     font-size: 32px;
     margin: 0 0 30px 15px;
-    color: #323638; }
+    color: #323638;
+    font-family: "merriweather",serif; }
   @media screen and (max-width: 900px) {
     section.work h2, section.work h3 {
       margin-left: 10px; } }
@@ -572,19 +594,14 @@ section.work {
       margin-left: 5px; } }
   section.work .inner {
     width: 1030px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    text-align: center; }
     @media screen and (max-width: 1075px) {
       section.work .inner {
         max-width: 930px; } }
     @media screen and (max-width: 950px) {
       section.work .inner {
-        max-width: 830px; } }
-    @media screen and (max-width: 900px) {
-      section.work .inner {
-        max-width: 820px; } }
-    @media screen and (max-width: 850px) {
-      section.work .inner {
-        max-width: 90%; } }
+        max-width: 98%; } }
     section.work .inner div.shot-border {
       height: auto;
       width: 33.3333%;
@@ -592,113 +609,192 @@ section.work {
       display: inline-block;
       text-decoration: none;
       position: relative; }
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 850px) {
         section.work .inner div.shot-border {
           width: 50%; } }
-      section.work .inner div.shot-border a.analytics4athletes .details h4 {
-        color: #2f6da8; }
-      section.work .inner div.shot-border a.spiritofwellness h4 {
-        color: #1c9346; }
-      section.work .inner div.shot-border a.lakeshoreforce h4 {
-        color: #ffaf00; }
-      section.work .inner div.shot-border a.globallgiving h4 {
-        color: #7ED321; }
-      section.work .inner div.shot-border a.zabelmonuments h4 {
-        color: #ea464c; }
-      section.work .inner div.shot-border a.newdirection h4 {
-        color: #8d9b42; }
+      @media screen and (max-width: 530px) {
+        section.work .inner div.shot-border {
+          width: 90%;
+          float: none;
+          margin: 10px 0; } }
       section.work .inner div.shot-border .shot {
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         margin: 15px;
-        background: #333;
+        background: #fff;
         display: inline-block;
         text-decoration: none;
         position: relative;
         cursor: pointer;
-        border: 1px solid;
-        border-color: #e5e6e9 #dfe0e4 #d0d1d5;
-        border-radius: 3px; }
+        border: 2px solid;
+        border-color: #dfe0e4 #dfe0e4 #d0d1d5;
+        border-color: #fff;
+        border-radius: 3px;
+        height: 375px; }
         @media screen and (max-width: 900px) {
           section.work .inner div.shot-border .shot {
             margin: 10px; } }
+        @media screen and (max-width: 850px) {
+          section.work .inner div.shot-border .shot {
+            height: auto; } }
         @media screen and (max-width: 650px) {
           section.work .inner div.shot-border .shot {
             margin: 5px; } }
-        section.work .inner div.shot-border .shot:hover {
-          /*box-shadow: none;*/ }
-          section.work .inner div.shot-border .shot:hover img {
-            opacity: 0.05; }
-            @media screen and (max-width: 750px) {
-              section.work .inner div.shot-border .shot:hover img {
-                opacity: 0.9; } }
-            @media screen and (max-width: 700px) {
-              section.work .inner div.shot-border .shot:hover img {
+        section.work .inner div.shot-border .shot:hover .featured-image {
+          background: #000; }
+          section.work .inner div.shot-border .shot:hover .featured-image img {
+            opacity: 0.35; }
+            @media screen and (max-width: 850px) {
+              section.work .inner div.shot-border .shot:hover .featured-image img {
                 opacity: 1.0; } }
-          section.work .inner div.shot-border .shot:hover .details {
-            position: absolute;
+        @media screen and (min-width: 851px) {
+          section.work .inner div.shot-border .shot:hover .view-study {
             display: block;
-            top: 65px;
-            left: 5%;
-            bottom: 0;
-            text-align: center;
-            width: 90%; }
-            @media screen and (max-width: 1000px) {
-              section.work .inner div.shot-border .shot:hover .details {
-                top: 0; } }
-            @media screen and (max-width: 750px) {
-              section.work .inner div.shot-border .shot:hover .details {
-                display: none; } }
-            section.work .inner div.shot-border .shot:hover .details h3, section.work .inner div.shot-border .shot:hover .details h4 {
-              text-transform: uppercase;
-              font-weight: 300;
-              text-align: center; }
-            section.work .inner div.shot-border .shot:hover .details h3 {
-              margin: 5px 0 10px;
-              font-size: 22px;
-              line-height: 24px;
-              letter-spacing: 1.2px;
-              color: #fff;
-              font-weight: 500;
-              text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); }
-              @media screen and (max-width: 1110px) {
-                section.work .inner div.shot-border .shot:hover .details h3 {
-                  font-size: 18px;
-                  margin: 0 0 10px; } }
-              @media screen and (max-width: 1000px) {
-                section.work .inner div.shot-border .shot:hover .details h3 {
-                  margin: 40px 0 10px; } }
-              @media screen and (max-width: 850px) {
-                section.work .inner div.shot-border .shot:hover .details h3 {
-                  margin: 30px 0 10px; } }
-              @media screen and (max-width: 768px) {
-                section.work .inner div.shot-border .shot:hover .details h3 {
-                  margin: 25px 0 10px; } }
-            section.work .inner div.shot-border .shot:hover .details h4 {
-              font-size: 11px;
-              letter-spacing: 3px;
-              line-height: 14px;
-              text-shadow: 1px 1px 2px black;
-              margin-bottom: 10px;
-              font-weight: 400; }
-            section.work .inner div.shot-border .shot:hover .details p {
-              font-size: 10px;
-              color: #bcbcbc;
-              display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%; }
+            section.work .inner div.shot-border .shot:hover .view-study p {
+              margin: 100px 0 0;
               position: relative;
-              margin: 0;
-              text-transform: uppercase;
-              font-weight: 400;
-              font-family: "proxima-nova", sans-serif;
-              line-height: 15px;
-              letter-spacing: 1px; }
-              section.work .inner div.shot-border .shot:hover .details p i.fa.fa-angle-right {
-                margin-left: 5px;
-                font-size: 11px; }
-        section.work .inner div.shot-border .shot .featured-image img {
-          width: 100%;
-          display: block; }
-        section.work .inner div.shot-border .shot .details {
+              text-align: center;
+              font-size: 14px;
+              font-family: "merriweather",serif;
+              font-weight: 300;
+              text-transform: none;
+              color: #fff;
+              text-shadow: 1px 1px 2px #000; }
+              section.work .inner div.shot-border .shot:hover .view-study p i.fa.fa-angle-right {
+                font-size: 19px;
+                vertical-align: middle;
+                margin-left: 7px; } }
+        section.work .inner div.shot-border .shot .featured-image {
+          background-color: #fff;
+          border-radius: 3px; }
+          section.work .inner div.shot-border .shot .featured-image img {
+            width: 100%;
+            display: block;
+            margin: 0;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px; }
+          section.work .inner div.shot-border .shot .featured-image h2 {
+            text-align: left;
+            font-size: 16px;
+            margin: 20px 0 0 15px;
+            width: 70%;
+            color: #000;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            font-family: "merriweather",serif; }
+          section.work .inner div.shot-border .shot .featured-image h4 {
+            color: #B8C4CC;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 12px;
+            text-align: left;
+            margin: 25px 0 15px 20px;
+            letter-spacing: 0.6px; }
+          section.work .inner div.shot-border .shot .featured-image p {
+            text-align: left;
+            margin: 0 0 20px 20px;
+            text-transform: uppercase;
+            font-size: 11px;
+            color: #d5d5d5;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            position: absolute;
+            bottom: 0px; }
+          section.work .inner div.shot-border .shot .featured-image .elipsis {
+            position: absolute;
+            bottom: 24px;
+            right: 20px;
+            font-size: 6px;
+            color: #d5d5d5; }
+            section.work .inner div.shot-border .shot .featured-image .elipsis i.fa.fa-circle {
+              margin: 0 0 0 1px; }
+        section.work .inner div.shot-border .shot h2 {
+          text-align: left;
+          font-size: 16px;
+          margin: 20px 0 0 15px;
+          width: 70%;
+          color: #323638;
+          font-weight: 300;
+          letter-spacing: 0.3px;
+          font-family: "merriweather",serif; }
+          @media screen and (max-width: 850px) {
+            section.work .inner div.shot-border .shot h2 {
+              margin: 16px 0 0 15px; } }
+          @media screen and (max-width: 530px) {
+            section.work .inner div.shot-border .shot h2 {
+              text-align: center;
+              margin: 16px 0 0 0;
+              width: auto; } }
+        section.work .inner div.shot-border .shot h4 {
+          color: #B8C4CC;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 12px;
+          text-align: left;
+          margin: 25px 0 15px 20px;
+          letter-spacing: 0.6px; }
+        section.work .inner div.shot-border .shot p {
+          text-align: left;
+          margin: 0 0 20px 20px;
+          text-transform: uppercase;
+          font-size: 11px;
+          color: #d5d5d5;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          position: absolute;
+          bottom: 0px; }
+          @media screen and (max-width: 850px) {
+            section.work .inner div.shot-border .shot p {
+              position: relative;
+              margin: 15px 0 12px 15px;
+              padding: 0; } }
+          @media screen and (max-width: 530px) {
+            section.work .inner div.shot-border .shot p {
+              text-align: center;
+              margin: 15px 0; } }
+        section.work .inner div.shot-border .shot .elipsis {
+          position: absolute;
+          bottom: 24px;
+          right: 20px;
+          font-size: 6px;
+          color: #d5d5d5; }
+          @media screen and (max-width: 850px) {
+            section.work .inner div.shot-border .shot .elipsis {
+              bottom: 15px; } }
+          @media screen and (max-width: 530px) {
+            section.work .inner div.shot-border .shot .elipsis {
+              display: none; } }
+          section.work .inner div.shot-border .shot .elipsis i.fa.fa-circle {
+            margin: 0 0 0 1px; }
+        section.work .inner div.shot-border .shot .details, section.work .inner div.shot-border .shot .view-study {
           display: none; }
+        @media screen and (max-width: 850px) {
+          section.work .inner div.shot-border .shot .view-study {
+            display: block;
+            position: relative;
+            text-align: left;
+            display: none; }
+            section.work .inner div.shot-border .shot .view-study p {
+              text-shadow: none;
+              text-align: left;
+              /*background: $yellow;*/
+              /*padding: 3px 4px;*/
+              border-radius: 2px;
+              color: #fff;
+              display: inline-block;
+              margin: 0 0 15px 15px;
+              /*text-shadow: 1px 1px 0 rgba(0,0,0,0.1);*/
+              color: #2A5A8A;
+              /*font-family: "merriweather",serif;*/
+              letter-spacing: 0; }
+              section.work .inner div.shot-border .shot .view-study p:hover {
+                background: #e9a103; }
+              section.work .inner div.shot-border .shot .view-study p i.fa.fa-angle-right {
+                margin: 0 0 0 5px; } }
 
 section.get-in-touch {
   width: 100%;
@@ -710,7 +806,6 @@ section.get-in-touch {
   section.get-in-touch h2 {
     font-size: 36px;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0; }
     @media screen and (max-width: 500px) {
@@ -749,6 +844,14 @@ footer {
   padding: 0 0 60px;
   background: #323638;
   text-align: center; }
+  footer p {
+    font-family: "verveine",sans-serif;
+    color: #ebebeb;
+    margin: 0;
+    padding: 0 0 30px;
+    font-size: 21px;
+    /*transform: rotate(-1deg);*/
+    letter-spacing: 1px; }
   footer div.social {
     display: inline-block; }
     footer div.social a {
